@@ -1,0 +1,356 @@
+{
+  "info": {
+    "name": "Gandaya",
+    "description": "",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Cart",
+      "item": [
+        {
+          "name": "Add product",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{base_url}}/cart/add",
+              "protocol": "",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cart",
+                "add"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cartId\": \"f99715da-3859-49a5-a289-7301356ac3b9\",\n  \"productId\": \"7b4285a7-6cf5-492d-abe0-5da667759dde\",\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Checkout",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{base_url}}/cart/checkout",
+              "protocol": "",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cart",
+                "checkout"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cartId\": \"85801712-5342-42f6-8e3f-a63cc61a3339\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Create cart",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{base_url}}/cart/create",
+              "protocol": "",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cart",
+                "create"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"userId\": \"{{user_id}}\",\n  \"eventId\": \"{{event_id}}\",\n  \"productId\": \"65309f6a-330c-4a4f-ae81-1378d11c2e51\",\n  \"quantity\": 1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Get current",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{base_url}}/cart/:userId/:eventId",
+              "protocol": "",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cart",
+                ":userId",
+                ":eventId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "{{user_id}}"
+                },
+                {
+                  "key": "eventId",
+                  "value": "{{event_id}}"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Remove product",
+          "event": [],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{base_url}}/cart/:cartId/:productId",
+              "protocol": "",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "cart",
+                ":cartId",
+                ":productId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "cartId",
+                  "value": "a273898d-b562-4a45-9607-c17d71ab9c52"
+                },
+                {
+                  "key": "productId",
+                  "value": "2a4f10e1-2c9f-427b-87c9-6375eab301a6"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "item": [
+        {
+          "name": "Get events",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{base_url}}/events",
+              "protocol": "",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Get products",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{base_url}}/events/:eventId/products",
+              "protocol": "",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                ":eventId",
+                "products"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "eventId",
+                  "value": "{{event_id}}"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Wallet",
+      "item": [
+        {
+          "name": "Deposit",
+          "event": [],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{base_url}}/wallet/:userId",
+              "protocol": "",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wallet",
+                ":userId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "{{user_id}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"amount\": 5000\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          }
+        },
+        {
+          "name": "Get balance",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{base_url}}/wallet/:userId",
+              "protocol": "",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "wallet",
+                ":userId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "{{user_id}}"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Get history",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{base_url}}/orders/:userId",
+              "protocol": "",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "orders",
+                ":userId"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "userId",
+                  "value": "{{user_id}}"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "bruno",
+      "event": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "user_id",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "event_id",
+      "value": "",
+      "type": "default"
+    }
+  ]
+}

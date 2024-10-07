@@ -1,0 +1,5 @@
+.env
+postman
+dist
+docker
+node_modules
