@@ -1,0 +1,26 @@
+name: Reset and Seed Database
+on:
+  workflow_dispatch:
+
+jobs:
+  reset-and-seed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Specify the Node.js version you're using
+
+      - name: Install dependencies
+        run: cd server && npm install
+
+      - name: Reset and seed database
+        run: cd server && npx prisma migrate reset --force --schema=./prisma/schema.prisma
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          
+      - name: Confirmation
+        run: echo "Database has been reset and seeded successfully."
