@@ -17,6 +17,6 @@ jobs:
       - name: Install dependencies
         run:  cd server && npm install
       - name: Apply all pending migrations to the database
-        run: npx prisma migrate deploy
+        run: cd server && npx prisma migrate deploy
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
