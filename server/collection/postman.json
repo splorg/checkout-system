@@ -95,7 +95,7 @@
             },
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"userId\": \"{{user_id}}\",\n  \"eventId\": \"{{event_id}}\",\n  \"productId\": \"65309f6a-330c-4a4f-ae81-1378d11c2e51\",\n  \"quantity\": 1\n}",
+              "raw": "{\n  \"userId\": \"{{user_id}}\",\n  \"eventId\": \"{{event_id}}\",\n  \"productId\": \"161d5365-b441-4d7b-ba56-d824867022fd\",\n  \"quantity\": 1\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -173,10 +173,10 @@
       ]
     },
     {
-      "name": "Events",
+      "name": "Orders",
       "item": [
         {
-          "name": "Get events",
+          "name": "Get history",
           "event": [],
           "request": {
             "method": "GET",
@@ -184,43 +184,20 @@
             "auth": null,
             "description": "",
             "url": {
-              "raw": "{{base_url}}/events",
+              "raw": "{{base_url}}/orders/:userId",
               "protocol": "",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
-                "events"
-              ],
-              "query": [],
-              "variable": []
-            }
-          }
-        },
-        {
-          "name": "Get products",
-          "event": [],
-          "request": {
-            "method": "GET",
-            "header": [],
-            "auth": null,
-            "description": "",
-            "url": {
-              "raw": "{{base_url}}/events/:eventId/products",
-              "protocol": "",
-              "host": [
-                "{{base_url}}"
-              ],
-              "path": [
-                "events",
-                ":eventId",
-                "products"
+                "orders",
+                ":userId"
               ],
               "query": [],
               "variable": [
                 {
-                  "key": "eventId",
-                  "value": "{{event_id}}"
+                  "key": "userId",
+                  "value": "{{user_id}}"
                 }
               ]
             }
@@ -299,10 +276,10 @@
       ]
     },
     {
-      "name": "Orders",
+      "name": "Events",
       "item": [
         {
-          "name": "Get history",
+          "name": "Get events",
           "event": [],
           "request": {
             "method": "GET",
@@ -310,20 +287,43 @@
             "auth": null,
             "description": "",
             "url": {
-              "raw": "{{base_url}}/orders/:userId",
+              "raw": "{{base_url}}/events",
               "protocol": "",
               "host": [
                 "{{base_url}}"
               ],
               "path": [
-                "orders",
-                ":userId"
+                "events"
+              ],
+              "query": [],
+              "variable": []
+            }
+          }
+        },
+        {
+          "name": "Get products",
+          "event": [],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "auth": null,
+            "description": "",
+            "url": {
+              "raw": "{{base_url}}/events/:eventId/products",
+              "protocol": "",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "events",
+                ":eventId",
+                "products"
               ],
               "query": [],
               "variable": [
                 {
-                  "key": "userId",
-                  "value": "{{user_id}}"
+                  "key": "eventId",
+                  "value": "{{event_id}}"
                 }
               ]
             }
@@ -339,17 +339,17 @@
   "variable": [
     {
       "key": "base_url",
-      "value": "",
+      "value": "http://localhost:3000",
       "type": "default"
     },
     {
       "key": "user_id",
-      "value": "",
+      "value": "030dc9fc-9077-472b-b904-567234c33be2",
       "type": "default"
     },
     {
       "key": "event_id",
-      "value": "",
+      "value": "01836bcf-6de8-4c1a-9200-6f16c6377b3c",
       "type": "default"
     }
   ]
