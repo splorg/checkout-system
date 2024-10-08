@@ -73,7 +73,7 @@ export const Footer = () => {
     }
 
     if (data?.cart.id) {
-      checkoutMutation.mutate({ cartId: data.cart.id, eventId: currentEvent, userId: TEST_USER_ID })
+      checkoutMutation.mutate({ cartId: data.cart.id })
     }
   }
 

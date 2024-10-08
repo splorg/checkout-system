@@ -14,8 +14,6 @@ interface RemoveItemProps {
 
 interface CompleteCheckoutProps {
   cartId: string
-  eventId: string
-  userId: string
 }
 
 export class CartService {
@@ -52,11 +50,9 @@ export class CartService {
     return data
   }
 
-  static completeCheckout = async ({ cartId, userId, eventId }: CompleteCheckoutProps) => {
+  static completeCheckout = async ({ cartId }: CompleteCheckoutProps) => {
     const { data } = await api.post<ICheckoutResult>(`/cart/checkout`, {
       cartId,
-      userId,
-      eventId,
     })
 
     return data
